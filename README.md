@@ -8,3 +8,11 @@ Projekt przetwornicy typu **Buck** (obniżającej napięcie) oparty na sterownik
 - Napięcie wyjściowe: regulowane (zależnie od PWM)
 - Topologia: półmostek H z przetwornicą typu Buck
 - Sterowanie: sygnał PWM (np. z ESP8266)
+
+## 🔌 Zastosowanie
+
+Ten projekt może być użyty jako:
+
+- regulator napięcia do zasilania urządzeń elektronicznych,
+- baza do nauki projektowania przetwornic impulsowych,
+- część większego systemu zasilania (np. z mikrokontrolerem IoT).
