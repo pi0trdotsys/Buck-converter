@@ -1,0 +1,16 @@
+* IR2104 - Uproszczony model do LTspice z prądowymi wyjściami
+.SUBCKT IR2104 IN HO LO VS VB
+.PARAM VDD=12
+.PARAM VTHRESH=2.5
+
+* Bufor prądowy – HO
+VHO HOint 0 DC 0
+GHO HO 0 VALUE = { IF(V(IN) > VTHRESH, 1, 0) }
+RHO HO HOint 1Meg
+
+* Bufor prądowy – LO
+VLO LOint 0 DC 0
+GLO LO 0 VALUE = { IF(V(IN) > VTHRESH, 0, 1) }
+RLO LO LOint 1Meg
+
+.ENDS IR2104

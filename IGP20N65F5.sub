@@ -1,0 +1,16 @@
+* Model IGP20N65F5 (IGBT) dla LTSpice
+* Na podstawie parametrów z datasheet Infineon
+.SUBCKT IGP20N65F5 C G E  ; Kolektor, Bramka, Emiter
+X1 C G E IGP20N65F5_MODEL
+.MODEL IGP20N65F5_MODEL IGBT (
++ Vto=4.5          ; Napięcie progowe (V)
++ Rs=0.01          ; Rezystancja źródła (Ω)
++ Rg=32            ; Rezystancja bramki (Ω) - z datasheet
++ Cgs=1.2n         ; Pojemność bramka-źródło (F) - szacowana
++ Cgd=0.5n         ; Pojemność bramka-dren (F) - szacowana
++ Qg=48n           ; Ładunek bramki (C) - z datasheet
++ Ton=18n          ; Czas włączenia (s) - z datasheet
++ Toff=170n        ; Czas wyłączenia (s) - z datasheet
++ Vce_sat=1.6      ; Napięcie nasycenia kolektor-emiter (V) - z datasheet
+)
+.ENDS	
