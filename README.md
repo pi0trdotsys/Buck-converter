@@ -51,8 +51,8 @@ EMI to zakłócenia elektromagnetyczne — niecelowo emitowana energia, która i
 ## 📋 Ocena z projektu
 
 Projekt składa się z dwóch części, do których przygotowujemy osobne raporty:
-- **a)** Symulacja w LTspice
-- **b)** Płytka PCB i jej pomiary
+- **a)** Symulacja anteny (MATLAB)
+- **b)** Płytka PCB i pomiary
 
 ## 📝 Kolokwium
 
