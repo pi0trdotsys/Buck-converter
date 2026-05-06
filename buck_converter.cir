@@ -1,0 +1,42 @@
+* Buck Converter - poprawiony netlist
+* V_in=100V, L=100uH, C=100uF, f=50kHz, Duty=0.3..0.7
+
+* === Zasilanie ===
+Vin Vin 0 DC 100
+
+* === Sygnaly sterujace ===
+Vpwm1 PWM1 0 PULSE(0 10 0 10n 10n {Duty/Freq} {1/Freq})
+Vpwm2 PWM2 0 PULSE(0 10 {Duty/Freq + 500n} 10n 10n {(1-Duty)/Freq - 1u} {1/Freq})
+
+* === Tranzystory ===
+M1 Vin PWM1 SW SW NMOS_PWR
+M2 SW PWM2 0 0 NMOS_PWR
+
+* === Diody body ===
+D1 SW Vin 1N4148
+D2 0 SW 1N4148
+
+* === Filtr LC ===
+L1 SW Vout 100u
+C1 Vout 0 100u
+
+* === Obciazenie ===
+Rload Vout 0 100
+
+* === Model tranzystora ===
+.model NMOS_PWR NMOS(Level=1 Vto=2 Kp=10 Vmax=200 Ron=0.1)
+
+* === Parametry ===
+.param Duty=0.5
+.param Freq=50k
+
+* === Symulacja ===
+.tran 0 10ms 0 1u UIC
+
+* === Krok po Duty ===
+.step param Duty 0.3 0.7 0.1
+
+* === Opcje solvera ===
+.options gmin=1e-12 reltol=0.001
+
+.end
