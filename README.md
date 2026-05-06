@@ -48,6 +48,20 @@ Dead time to krótka przerwa między wyłączeniem jednego a włączeniem drugie
 ## EMI (Electromagnetic Interference) 📡
 
 EMI to zakłócenia elektromagnetyczne — niecelowo emitowana energia, która interferuje z innymi urządzeniami lub samym układem. W przetwornicy głównym źródłem są strome zbocza V_SW, które powodują emisję w paśmie 20–100 MHz. Przy wyższych częstotliwościach przełączania (200–300 kHz) zakłócenia obejmują szersze widmo.
+
+## 🔌 Schemat LTSpice
+![Schemat LTSpice](LTSpice_layout.png)
+
+## 🖥️ Schemat Eagle
+![Schemat Eagle](SCH_layout.png)
+
+## 🗺️ Layout PCB
+![Layout PCB](PCB_layout.png)
+
+## 📊 Wyniki symulacji
+Przebiegi V(vout) oraz I(L1) dla wypełnienia PWM D = 0.3 – 0.7:
+![Vout i prąd cewki](Vout_I(L).png)
+
 ## 📋 Ocena z projektu
 
 Projekt składa się z dwóch części, do których przygotowujemy osobne raporty:
